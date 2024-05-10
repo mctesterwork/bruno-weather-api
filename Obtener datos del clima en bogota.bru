@@ -1,0 +1,16 @@
+meta {
+  name: Obtener datos del clima en bogota
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://goweather.herokuapp.com/weather/bogota
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.temperature: contains °C
+}
